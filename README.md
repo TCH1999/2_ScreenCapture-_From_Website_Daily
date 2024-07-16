@@ -26,18 +26,12 @@ Follow the steps below to use the "Screen Capture" program:
 2. Open a terminal or command prompt and navigate to the program directory.
 3. Install the required Python libraries by running the following command:
 pip install selenium pillow
-
-livecodeserver
-Copy
 4. Download and install the Chrome WebDriver from the official website
 5. Update the program code with the necessary configurations:
 - Modify the `folder_path` variable to specify the target location where the screenshots will be saved.
 - Adjust any other relevant parameters based on your requirements (e.g., screenshot file name format, website URL).
 6. Save the code changes and execute the program by running the following command:
 python screen_capture.py
-
-livecodeserver
-Copy
 
 Upon execution, the program will perform the following tasks:
 
@@ -48,6 +42,22 @@ Upon execution, the program will perform the following tasks:
 5. Show a message box indicating that the process is finished.
 
 Please note that the program is designed to capture screenshots from a specific website URL. If you need to capture screenshots from a different website or adjust any other parameters, modify the relevant parts of the code accordingly.
+
+## Daily Task Execution
+1. Open task scheduler on your PC (win 11)
+2. Click create a new task on your right top side 
+3. Enter your task name and description 
+4. Click on the trigger tab and select new for trigger program time
+5. Choose your repeat time
+6. Click on the action tab and select start a python.exe program
+p.s. you can find your local python.exe by cmd 
+- Python.exe is not your python script
+- Enter in the prompt "find python" , 1st location is your aim 
+7. Enter your python script name in (A)
+8. Enter your script location in (T)
+9. Enter your user password for the computer , then done.
+Ref:
+https://www.youtube.com/watch?v=4n2fC97MNac
 
 ## Conclusion
 
