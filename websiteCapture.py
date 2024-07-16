@@ -2,12 +2,14 @@ import os
 import time
 import sys
 from PIL import Image
+import datetime
 from datetime import date
 
 sys.path.append("C:/Users/Switc/miniconda3/Lib/site-packages")                       # Change pt 1: install library location
 from selenium import webdriver
 import tkinter as tk
 from tkinter import messagebox
+
 
 def create_folder(folder_path, target_date):
     """Create a folder in the specified path"""
@@ -17,10 +19,13 @@ def create_folder(folder_path, target_date):
 
 def take_screenshot(url, folder_path, target_date, i):
     """Take a screenshot of the webpage and save it to the specified folder"""
-    driver = webdriver.Chrome()
+    options = webdriver.ChromeOptions()
+    options.add_argument(f"--window-size=900,900")  # Adjust the width and height as needed
+    driver = webdriver.Chrome(options=options)
+
     driver.get(url)
     time.sleep(5)
-    screenshot_file_name = f"賽馬賠率-{target_date}_場次{i}.png"                      # Change pt 3: The output name can be change
+    screenshot_file_name = f"賽馬賠率-{target_date}_場次{i}.png"
     screenshot_path = os.path.join(folder_path, target_date, screenshot_file_name)
     driver.save_screenshot(screenshot_path)
     driver.quit()
@@ -47,4 +52,7 @@ def main():
     messagebox.showinfo("Information", "The Process is finished!")
 
 if __name__ == "__main__":
+    file = open(r'G:\SynologyDrive\2_LifeGoalProject\2_programmingProject\1_python\3_codeProject\1_automation_Website_Capture\DAILY_WEBSITE_CAPTURE\taskLog','a')
+    file.write(f'{datetime.datetime.now()} - The script ran \n')
     main()
+    
