@@ -18,7 +18,7 @@ def create_folder(folder_path, target_date):
     return folder_name
 
 def take_screenshot(url, folder_path, target_date, i):
-    """Take a screenshot of the webpage and save it to the specified folder"""
+    """Take a screenshot of the webpage and save it to the specified folder"""l
     options = webdriver.ChromeOptions()
     options.add_argument(f"--window-size=900,900")  # Adjust the width and height as needed
     driver = webdriver.Chrome(options=options)
