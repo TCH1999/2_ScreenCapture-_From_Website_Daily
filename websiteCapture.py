@@ -2,6 +2,7 @@ import os
 import time
 import sys
 from PIL import Image
+import datetime
 from datetime import date
 
 """Program : Screen Capture from website and save in target location and organize with current date folder"""
@@ -21,15 +22,19 @@ def create_folder(folder_path, target_date):
     return folder_name
 
 def take_screenshot(url, folder_path, target_date, i):
-    """Take a screenshot of the webpage and save it to the specified folder"""
-    driver = webdriver.Chrome()
+    """Take a screenshot of the webpage and save it to the specified folder"""l
+    options = webdriver.ChromeOptions()
+    options.add_argument(f"--window-size=1000,1000")  # Adjust the width and height as needed
+    driver = webdriver.Chrome(options=options)
+
     driver.get(url)
     time.sleep(5)
-    screenshot_file_name = f"{target_date}_Screencapture{i}.png"                      # Change pt 3: The output name can be change
+    screenshot_file_name = f"{target_date}_Screencapture{i}.png" 
     screenshot_path = os.path.join(folder_path, target_date, screenshot_file_name)
     driver.save_screenshot(screenshot_path)
     driver.quit()
     return screenshot_path
+
 
 def capture_screenshots(url,folder_path, target_date):                               # Change pt 4: if website URL have more than 1 , it can be adjust
     """Capture screenshots for all NO."""
@@ -53,4 +58,7 @@ def main(url,debug):
 
 if __name__ == "__main__":
    debug = True
+   file = open(r'G:\SynologyDrive\2_LifeGoalProject\2_programmingProject\1_python\3_codeProject\1_automation_Website_Capture\DAILY_WEBSITE_CAPTURE\taskLog','a')
+   file.write(f'{datetime.datetime.now()} - Th
+               e script ran \n') 
    main(debug)

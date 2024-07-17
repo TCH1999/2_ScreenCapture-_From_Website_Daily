@@ -49,16 +49,12 @@ Please note that the program is designed to capture screenshots from a specific 
 3. Enter your task name and description 
 4. Click on the trigger tab and select new for trigger program time
 5. Choose your repeat time
-6. Click on the action tab and select start a python.exe program
-p.s. you can find your local python.exe by cmd 
-- Python.exe is not your python script
-- Enter in the prompt "find python" , 1st location is your aim 
-7. Enter your python script name in (A)
-8. Enter your script location in (T)
-9. Enter your user password for the computer , then done.
+6. Click on the action tab and select start your python script program
+7. You can excute the program in task schedule , there will be a log text generate in the folder to check if task scheduler working
+8. Enter your user password for the computer , then done.
 Ref:
 https://www.youtube.com/watch?v=4n2fC97MNac
 
 ## Conclusion
 
-The "Screen Capture" program simplifies the process of capturing screenshots from a website and organizing them based on the current date. It utilizes the Selenium library and Chrome WebDriver to automate the screenshot capture process. By following the usage instructions provided in this documentation, you can easily capture and save screenshots from the desired website.
+The "Screen Capture" program simplifies the process of capturing screenshots from a website and organizing them based on the current date. It utilizes the Selenium library and Chrome WebDriver to automate the screenshot capture process. By following the usage instructions provided in this documentation, you can easily capture and save screenshots from the desired 
